@@ -3,12 +3,10 @@
 import React, { useEffect, useState } from 'react'
 import AuroraBackground from './components/AuroraBackground'
 
-const socios = [
-  { initial: 'R', name: 'Rafael Milagre', creds: 'Founder Viver de IA · Mentor G4' },
-  { initial: 'Y', name: 'Yago Martins', creds: 'CEO Viver de IA · Mentor G4' },
-  { initial: 'T', name: 'Tallis Gomes', creds: 'Founder G4, Easy Taxi e Singu' },
-  { initial: 'A', name: 'Alfredo Soares', creds: 'Founder G4, XTech · Sócio Vtex' },
-  { initial: 'B', name: 'Bruno Nardon', creds: 'Founder G4, Kanui e Norte Ventures' },
+const equipe: Array<{ initial?: string; image?: string; name: string; creds: string }> = [
+  { image: '/vinicius-lopes.png', name: 'Vinicíus Lopes', creds: 'Especialista em IA e migração de projetos low-code para IA' },
+  { image: '/pedro-saboia-white-bg.png', name: 'Pedro Sabóia', creds: 'Gestão de projetos, pessoas e análise de processos' },
+  { image: '/gabriel-mark.png', name: 'Gabriel Mark', creds: 'Marketing e Growth' },
 ]
 
 export default function Home() {
@@ -76,11 +74,13 @@ export default function Home() {
             : '1px solid rgba(255,255,255,0.08)',
           transition: 'all 0.3s ease'
         }}>
-          <a href="#" className="nav-logo">WWAI</a>
+          <a href="#" className="nav-logo nav-logo-brand" aria-label="WWAI">
+            <span className="logo-white">WW</span><span className="logo-neon">AI</span>
+          </a>
           <ul className="nav-links">
             <li><a href="#problema">Sobre</a></li>
             <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#socios">Sócios</a></li>
+            <li><a href="#socios">Equipe</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
           <a
@@ -110,7 +110,7 @@ export default function Home() {
       <div className="nav-mobile" id="nav-mobile">
         <a href="#problema">Sobre</a>
         <a href="#servicos">Serviços</a>
-        <a href="#socios">Sócios</a>
+        <a href="#socios">Equipe</a>
         <a href="#contato">Contato</a>
         <a href="#cta-final" className="nav-cta">Quero uma análise →</a>
       </div>
@@ -412,24 +412,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SÓCIOS */}
+      {/* EQUIPE */}
       <section id="socios">
         <div className="container">
           <div className="socios-header fade-up">
             <p className="section-label">As pessoas por trás da WWAI</p>
-            <h2 className="section-headline">Os sócios</h2>
+            <h2 className="section-headline">A equipe</h2>
             <p className="section-sub">
-              Líderes que construíram empresas reais e agora unem forças para levar IA ao próximo nível.
+              Um time multidisciplinar combinando estratégia, automação e execução para levar IA ao próximo nível.
             </p>
           </div>
           <div className="socios-grid">
-            {socios.map((s, i) => (
+            {equipe.map((s, i) => (
               <div key={s.name} className={`socio-card fade-up stagger-${i + 1}`}>
-                <div className="socio-avatar">{s.initial}</div>
+                {s.image ? (
+                  <img className="socio-photo" src={s.image} alt={s.name} />
+                ) : (
+                  <div className="socio-avatar">{s.initial}</div>
+                )}
                 <p className="socio-name">{s.name}</p>
                 <p className="socio-creds">{s.creds}</p>
               </div>
             ))}
+            <div className="socio-card socio-more-card fade-up stagger-4">
+              <div className="socio-more-mark">+</div>
+              <p className="socio-name">E mais especialistas</p>
+              <p className="socio-creds">Um time completo para suprir as necessidades da empresa e elevar a performance com IA.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -437,7 +446,9 @@ export default function Home() {
       {/* FOOTER */}
       <footer id="contato">
         <div className="footer-brand">
-          <a href="#" className="nav-logo">WWAI</a>
+          <a href="#" className="nav-logo nav-logo-brand" aria-label="WWAI">
+            <span className="logo-white">WW</span><span className="logo-neon">AI</span>
+          </a>
           <p className="footer-tagline">
             Inteligência Artificial aplicada para empresas que querem crescer de verdade.
           </p>
