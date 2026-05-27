@@ -121,6 +121,7 @@ section { position: relative; z-index: 1; background: transparent; }
   color: #FFFFFF; margin-bottom: 1.5rem; text-align: center;
 }
 .hero-headline .hl { display: block; white-space: nowrap; color: #FFFFFF; }
+.hero-headline .hl { white-space: normal; }
 .hero-headline .accent { color: #FFFFFF; }
 
 .hero-sub {
@@ -170,6 +171,22 @@ section { position: relative; z-index: 1; background: transparent; }
 #problema { padding: 100px 0; background: #ffffff; }
 #problema .section-label { color: var(--primary); }
 .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+/* Feature rows in #problema (replaces inline styles) */
+.feature-row { display: flex; align-items: center; gap: 80px; }
+.feature-row.reverse { flex-direction: row-reverse; }
+.feature-visual {
+  flex: 1; border-radius: 16px; overflow: hidden; border: 1px solid #1a1a1a;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3); background: #0a0a0a; height: 360px;
+}
+.feature-visual svg { width: 100%; height: auto; display: block; }
+.feature-text { flex: 1; }
+.feature-cta {
+  display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+  border: 1px solid #d1d5db; border-radius: 12px; font-size: 16px; color: #111;
+  text-decoration: none; font-weight: 500; transition: border-color 0.2s, background 0.2s;
+}
+
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SERVIÃ‡OS
@@ -254,6 +271,9 @@ footer {
 .footer-right { text-align: right; }
 .footer-email a { color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: opacity 0.2s; }
 .footer-email a:hover { opacity: 0.75; }
+.footer-social { margin-top: 0.5rem; }
+.footer-social a { color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+.footer-social a:hover { opacity: 0.85; }
 .footer-copy { color: #888; font-size: 0.8rem; margin-top: 0.4rem; }
 .footer-micro { color: rgba(0,0,0,0.28); font-size: 0.72rem; margin-top: 0.25rem; letter-spacing: 0.04em; }
 
@@ -279,11 +299,31 @@ footer {
   .nav-pill { padding: 8px 8px 8px 18px; }
   footer { flex-direction: column; }
   .footer-right { text-align: left; }
+  /* Force stacking on small screens to avoid side-by-side layout */
+  .feature-row { display: block; gap: 28px; align-items: flex-start; }
+  .feature-row.reverse { flex-direction: column; }
+  .feature-visual { height: auto; width: 100%; margin-bottom: 20px; }
+  .feature-text { width: 100%; }
+  /* Move mobile nav a bit lower and add extra internal spacing so it doesn't sit too close to the header */
+  .nav-mobile { top: 86px; padding-top: 2rem; }
+  /* Give section headers breathing room on smaller screens */
+  .servicos-header { padding-top: 0.75rem; }
+  .servicos-header .section-headline { font-size: clamp(1.3rem, 5.5vw, 2rem); }
+  /* Prevent text clipping: ensure headings and cards can show descenders */
+  .section-headline, .service-title, .service-body, .section-sub {
+    overflow: visible;
+  }
+  .section-headline { line-height: 1.2; }
+  .service-title { line-height: 1.35; }
+  .service-card { padding-bottom: 2.25rem; }
+  .container { padding-bottom: 2rem; }
 }
 @media (max-width: 640px) {
   .socios-grid { grid-template-columns: 1fr 1fr; }
   #hero { padding-top: 100px; }
   .cta-box { padding: 3.5rem 1.25rem; }
+  .hero-inner { padding: 0 4%; }
+  .hero-headline { font-size: clamp(1rem, 4.2vw, 2.4rem); }
 }
 @media (max-width: 420px) {
   .socios-grid { grid-template-columns: 1fr; }

@@ -164,7 +164,7 @@ export default function Home() {
 
       {/* PROBLEMA */}
       <section id="problema">
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '100px 48px' }}>
+        <div className="container problema-inner">
           <div className="header fade-up" style={{ marginBottom: '80px' }}>
             <p className="section-label">IA Amadora vs. IA Profissional</p>
             <h2 className="section-headline">
@@ -180,7 +180,7 @@ export default function Home() {
               cta: 'Entender o diagnóstico',
               link: '#cta-final',
               visual: (
-                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'100%',display:'block'}}>
+                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'auto',display:'block'}}>
                   <defs>
                     <marker id="ag1" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#00FF50"/></marker>
                     <marker id="ar1" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#ef4444"/></marker>
@@ -227,7 +227,7 @@ export default function Home() {
               cta: 'Ver como otimizar',
               link: '#servicos',
               visual: (
-                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'100%',display:'block'}}>
+                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'auto',display:'block'}}>
                   <rect width="600" height="280" fill="#0a0a0a"/>
                   {/* Axes */}
                   <line x1="70" y1="220" x2="540" y2="220" stroke="#2a2a2a" strokeWidth="1.5"/>
@@ -266,7 +266,7 @@ export default function Home() {
               cta: 'Quero escalar de verdade',
               link: '#cta-final',
               visual: (
-                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'100%',display:'block'}}>
+                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'auto',display:'block'}}>
                   <defs>
                     <marker id="ag3" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#00FF50"/></marker>
                   </defs>
@@ -310,28 +310,16 @@ export default function Home() {
               ),
             },
           ] as Array<{label:string;title:string;description:string;cta:string;link:string;visual:React.ReactNode}>).map((feature, index) => (
-            <div key={index} className="fade-up" style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '80px',
+            <div key={index} className={`fade-up feature-row ${index % 2 !== 0 ? 'reverse' : ''}`} style={{
               marginBottom: index < 2 ? '120px' : '0',
-              flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
             }}>
               {/* Visual SVG */}
-              <div style={{
-                flex: 1,
-                borderRadius: '16px',
-                overflow: 'hidden',
-                border: '1px solid #1a1a1a',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
-                background: '#0a0a0a',
-                height: '360px',
-              }}>
+              <div className="feature-visual">
                 {feature.visual}
               </div>
 
               {/* Texto */}
-              <div style={{ flex: 1 }}>
+              <div className="feature-text">
                 <p style={{ fontSize: '13px', fontWeight: '600', color: '#00FF50', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px' }}>
                   {feature.label}
                 </p>
@@ -341,19 +329,7 @@ export default function Home() {
                 <p style={{ fontSize: '18px', color: '#4b5563', lineHeight: '1.7', marginBottom: '32px' }}>
                   {feature.description}
                 </p>
-                <a href={feature.link} style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '14px 28px',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '12px',
-                  fontSize: '16px',
-                  color: '#111',
-                  textDecoration: 'none',
-                  fontWeight: '500',
-                  transition: 'border-color 0.2s, background 0.2s',
-                }}>
+                <a href={feature.link} className="feature-cta">
                   {feature.cta} →
                 </a>
               </div>
@@ -469,6 +445,9 @@ export default function Home() {
         <div className="footer-right">
           <p className="footer-email">
             <a href="mailto:contato@wwaico.com">contato@wwaico.com</a>
+          </p>
+          <p className="footer-social">
+            <a href="https://instagram.com/wwai.co" target="_blank" rel="noreferrer">@wwai.co</a>
           </p>
           <p className="footer-copy">© 2026 WWAI. Todos os direitos reservados.</p>
           <p className="footer-micro">Feito com IA · para resultados reais</p>
