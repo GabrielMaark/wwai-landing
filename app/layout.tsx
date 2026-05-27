@@ -16,9 +16,17 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'WWAI — Consultoria de Inteligência Artificial B2B',
+  title: 'WWAI - Consultoria de Inteligencia Artificial B2B',
   description:
-    'Implementamos a estrutura técnica das maiores empresas de IA do país no seu negócio para reduzir sua folha, cortar desperdícios de API e liberar seu tempo para o que realmente importa.',
+    'Implementamos a estrutura tecnica das maiores empresas de IA do pais no seu negocio para reduzir sua folha, cortar desperdicios de API e liberar seu tempo para o que realmente importa.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

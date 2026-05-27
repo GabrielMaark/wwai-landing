@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import AuroraBackground from './components/AuroraBackground'
+import WWAIInteractiveGlobeSection from './components/WWAIInteractiveGlobeSection'
 
 const equipe: Array<{ initial?: string; image?: string; name: string; creds: string }> = [
   { image: '/vinicius-lopes.png', name: 'Vinicíus Lopes', creds: 'Especialista em IA e migração de projetos low-code para IA' },
@@ -75,7 +76,7 @@ export default function Home() {
           transition: 'all 0.3s ease'
         }}>
           <a href="#" className="nav-logo nav-logo-brand" aria-label="WWAI">
-            <span className="logo-white">WW</span><span className="logo-neon">AI</span>
+            <span className="logo-white">WW</span><span className="logo-neon logo-a">A<span className="logo-bolt" aria-hidden="true" /></span><span className="logo-neon">I</span>
           </a>
           <ul className="nav-links">
             <li><a href="#problema">Sobre</a></li>
@@ -338,6 +339,8 @@ export default function Home() {
         </div>
       </section>
 
+      <WWAIInteractiveGlobeSection />
+
       {/* SERVIÇOS */}
       <section id="servicos">
         <div className="container">
@@ -447,7 +450,7 @@ export default function Home() {
       <footer id="contato">
         <div className="footer-brand">
           <a href="#" className="nav-logo nav-logo-brand" aria-label="WWAI">
-            <span className="logo-white">WW</span><span className="logo-neon">AI</span>
+            <span className="logo-white">WW</span><span className="logo-neon logo-a">A<span className="logo-bolt" aria-hidden="true" /></span><span className="logo-neon">I</span>
           </a>
           <p className="footer-tagline">
             Inteligência Artificial aplicada para empresas que querem crescer de verdade.
