@@ -449,11 +449,11 @@ export default function Home() {
       {/* FOOTER */}
       <footer id="contato">
         <div className="footer-brand">
-          <a href="#" className="nav-logo nav-logo-brand" aria-label="WWAI">
-            <span className="logo-white">WW</span><span className="logo-neon logo-a">A<span className="logo-bolt" aria-hidden="true" /></span><span className="logo-neon">I</span>
+          <a href="#" className="footer-logo" aria-label="WWAI">
+            <img src="/wwai-logo-original.png" alt="WWAI - World With Artificial Intelligence" />
           </a>
           <p className="footer-tagline">
-            Inteligência Artificial aplicada para empresas que querem crescer de verdade.
+            🌍⚡ Acreditamos que a Inteligência Artificial, quando conectada à energia certa, potencializa pessoas, negócios e ideias.
           </p>
         </div>
         <div className="footer-right">
