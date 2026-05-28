@@ -181,7 +181,7 @@ export default function Home() {
               cta: 'Entender o diagnóstico',
               link: '#cta-final',
               visual: (
-                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'auto',display:'block'}}>
+                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style={{width:'100%',height:'100%',display:'block'}}>
                   <defs>
                     <marker id="ag1" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#00FF50"/></marker>
                     <marker id="ar1" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#ef4444"/></marker>
@@ -228,7 +228,7 @@ export default function Home() {
               cta: 'Ver como otimizar',
               link: '#servicos',
               visual: (
-                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'auto',display:'block'}}>
+                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style={{width:'100%',height:'100%',display:'block'}}>
                   <rect width="600" height="280" fill="#0a0a0a"/>
                   {/* Axes */}
                   <line x1="70" y1="220" x2="540" y2="220" stroke="#2a2a2a" strokeWidth="1.5"/>
@@ -267,7 +267,7 @@ export default function Home() {
               cta: 'Quero escalar de verdade',
               link: '#cta-final',
               visual: (
-                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'auto',display:'block'}}>
+                <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style={{width:'100%',height:'100%',display:'block'}}>
                   <defs>
                     <marker id="ag3" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#00FF50"/></marker>
                   </defs>
@@ -408,7 +408,7 @@ export default function Home() {
             <p className="section-sub">
               Agende uma conversa gratuita e descubra como reduzir custos e multiplicar resultados.
             </p>
-            <a href="mailto:contato@wwaico.com" className="btn-large">
+            <a href="https://wwai-world-with-artificial-intelligence.leadble.app/wwai-world-with-artificial-intelligence-custom" className="btn-large">
               Quero começar →
             </a>
           </div>

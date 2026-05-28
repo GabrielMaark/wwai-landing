@@ -211,7 +211,19 @@ section { position: relative; z-index: 1; background: transparent; }
   flex: 1; border-radius: 16px; overflow: hidden; border: 1px solid #1a1a1a;
   box-shadow: 0 4px 24px rgba(0,0,0,0.3); background: #0a0a0a; height: 360px;
 }
-.feature-visual svg { width: 100%; height: auto; display: block; }
+
+/* Desktop: make visual fill the container and center content */
+@media (min-width: 900px) {
+  .feature-visual { display: flex; align-items: center; justify-content: center; }
+  .feature-visual svg,
+  .feature-visual img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+  }
+}
 .feature-text { flex: 1; }
 .feature-cta {
   display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
